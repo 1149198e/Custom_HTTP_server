@@ -1,9 +1,6 @@
 import argparse
 from http.server import BaseHTTPRequestHandler, HTTPServer
-import sys
-
 DEFAULT_HOST='127.0.0.1'
-DEFAULT_PORT=8800
 
 class requesthandler(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -28,7 +25,7 @@ def run_server(port):
         server.socket.close()
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
-    parser.add_argument('--port', action='store', dest='port', default=DEFAULT_PORT)
+    parser.add_argument('--port', action='store', dest='port', type=int)
     argument_parser=parser.parse_args()
     port=argument_parser.port
     run_server(port)
