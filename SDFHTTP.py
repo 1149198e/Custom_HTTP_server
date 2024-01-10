@@ -7,7 +7,7 @@ class requesthandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type', 'text/html')
         self.end_headers()
-        self.wfile.write("Hello from server")
+        self.wfile.write("Hello from Anish!")
         return
 class CustomHTTPServer(HTTPServer):
     def __init__(self, host, port):
